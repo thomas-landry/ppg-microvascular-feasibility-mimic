@@ -1,12 +1,10 @@
 # Manuscript — ppg-microvascular-feasibility-mimic
 
-Single-author IMRAD paper. Target preprint: medRxiv. Target journal: JAMIA or JAMIA Open.
-
 ## Files
 
 - `tex/manuscript.tex` — the LaTeX source.
 - `references.bib` — Vancouver-style BibTeX (informational; the manuscript uses an inline numbered list).
-- `figures/` — the five figures referenced by the paper (PDF and PNG).
+- `figures/` — the figures referenced by the paper (vector PDFs).
 
 The compiled PDF, the citation-verification log, and the figure build notes are kept out of the public release; see `.gitignore`.
 
