@@ -2,6 +2,10 @@
 
 A feasibility evaluation of three photoplethysmography-derived microvascular reactivity signals computed on the MIMIC-IV Waveform Database (v0.1.0), with a local multimodal language model used as a second morphology reader.
 
+**Authors:** Thomas C. Landry, MD; Youjin Kim, MD
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20534451.svg)](https://doi.org/10.5281/zenodo.20534451)
+
 The three signals attempted:
 
 - **Signal 1**: a cuff-anchored perfusion-index recovery around routine noninvasive blood pressure cycles, intended to capture a reactive-hyperemia response when the blood pressure cuff happens to share a limb with the pulse oximeter probe.
@@ -53,12 +57,27 @@ See `data/README.md` for the MIMIC-IV access pointer.
 
 ## Manuscript
 
-The working draft is at `manuscript/tex/manuscript.tex` and compiles to `manuscript.pdf` with `latexmk -pdf manuscript.tex`.
+The manuscript source is at `manuscript/tex/manuscript.tex` and compiles to `manuscript.pdf` with `latexmk -pdf manuscript.tex`; the figures are in `manuscript/figures/`. A preprint is posted on medRxiv (DOI added here once it goes live).
+
+## Data availability
+
+This study uses third-party data that are **not redistributed here**. MIMIC-IV (v3.1) and the MIMIC-IV Waveform Database (v0.1.0) are available to credentialed researchers from PhysioNet under a Data Use Agreement:
+
+- MIMIC-IV v3.1: https://physionet.org/content/mimiciv/3.1/
+- MIMIC-IV-WDB v0.1.0: https://physionet.org/content/mimic4wdb/0.1.0/
 
 ## License
 
-MIT. See `LICENSE`. Data are not redistributed; PhysioNet credentialed access and an executed Data Use Agreement are required.
+The code in this repository is released under the MIT License (see `LICENSE`). The manuscript and figures (`manuscript/`) are released under CC BY 4.0, matching the medRxiv preprint.
 
 ## Citation
 
-After the preprint posts, this section will list the preprint DOI and a `CITATION.cff` file.
+If you use this work, please cite the preprint and the archived software. A machine-readable `CITATION.cff` is included, so GitHub shows a "Cite this repository" button.
+
+**Preprint**
+
+> Landry TC, Kim Y. An AI-assisted feasibility evaluation of three photoplethysmography-derived microvascular reactivity signals in MIMIC-IV-WDB v0.1.0. medRxiv. 2026. doi: [added when posted].
+
+**Software (this repository, v1.0.0)**
+
+> Landry TC, Kim Y. ppg-microvascular-feasibility-mimic (v1.0.0). Zenodo. 2026. https://doi.org/10.5281/zenodo.20534451
