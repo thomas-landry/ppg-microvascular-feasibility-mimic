@@ -1,0 +1,24 @@
+# sha256: a6e10c27936fffedce5383fad8ec71b8075d3240f0209a30bfa7cd4f75c688c0
+You are an impartial reviewer of a single image showing a 5-minute segment of a 1-Hz peripheral perfusion-index (PI) time series from an ICU pulse oximeter, displayed on top, with its Welch power spectrum displayed on the bottom. Your task is to classify the segment into exactly one of three categories with no prior assumption about which is correct. Most ICU PI segments are noisy, non-stationary, or have no clear Mayer-band peak; do not assume the pattern is present.
+
+The pattern of interest is a Mayer-band spectral peak on a stationary signal. A Mayer-band peak is a clear peak in the spectrum within 0.05 to 0.15 Hz whose power is at least 1.5 times the median power in the 0.20 to 0.50 Hz reference band, displayed on a PI(t) segment that is visibly stationary (no drift, no jumps, no dropouts, no large motion artifact). Call this the "Mayer peak present" pattern.
+
+Categories:
+"mayer_peak_present" only if a clear peak inside 0.05 to 0.15 Hz is visible above the local noise floor AND the PI(t) trace on top is visibly stationary across the 5-minute window;
+"no_mayer_peak" if the trace is non-stationary (drifting, jumping, has dropouts, or motion artifact), or if there is no spectral peak in the Mayer band, or if the only peak in or near the Mayer band is at the two lowest frequency bins (indicating residual drift rather than a Mayer-band oscillation), or coincides with a heart-rate subharmonic, or sits at the LF/HF band boundary where respiratory power may be bleeding across;
+"indeterminate" if the image is too ambiguous or low quality to decide.
+
+Be conservative: when the PI(t) trace is visibly drifting or motion-contaminated, answer "no_mayer_peak" regardless of what the spectrum shows.
+
+In addition, flag each of the following failure modes if it is visible:
+"F1_hr_subharmonic": the LF peak coincides with one-half of the heart rate frequency (heart rate is typically 60 to 120 bpm, or 1.0 to 2.0 Hz, so a subharmonic in the Mayer band is possible at bradycardia).
+"F2_respiratory_bleedthrough": a peak in the high band (0.15 to 0.40 Hz) spreads across the LF/HF boundary into the Mayer band.
+"F3_drift": the highest power in the spectrum sits at the lowest one or two Welch frequency bins (below 0.04 Hz).
+"F4_nonstationary": the PI(t) trace shows visible drift, jumps, dropouts, or motion artifact within the 5-minute window.
+
+Return ONLY a single JSON object, no prose and no code fences, with keys:
+"observed" (one short clause literally describing what the trace and the spectrum do),
+"call" (one of "mayer_peak_present", "no_mayer_peak", "indeterminate"),
+"confidence" (number from 0 to 1),
+"failure_modes" (list of zero or more strings from "F1_hr_subharmonic", "F2_respiratory_bleedthrough", "F3_drift", "F4_nonstationary"),
+"rationale" (one short sentence tying the observation to the call).

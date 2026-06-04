@@ -1,0 +1,2 @@
+# sha256: 47eabd9c0e39d1aa28fc219f5440183b272f74a91cafe8f52687c6c1d8ce7011
+Classify the attached single PPG beat and its overlaid exponential fit against the criteria. Return only the JSON object.

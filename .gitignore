@@ -1,0 +1,123 @@
+# =============================================================================
+# .gitignore  —  ppg-microvascular-feasibility-mimic (PUBLIC repo)
+# =============================================================================
+# This is a public-bound repository. Anything credentialed, secret, derived,
+# or internal-process MUST stay out of every commit. When in doubt, ignore it.
+# Audit every staged file before the first public push.
+# =============================================================================
+
+# ---- credentialed data: NEVER commit (PhysioNet DUA) ----
+# Ignore directory CONTENTS (data/*, not data/) so git can still descend and
+# honor the README negation below. A trailing-slash ignore would block descent
+# and the negation would never fire.
+data/*
+!data/README.md
+*.parquet
+*.csv.gz
+*.hea
+*.dat
+*.wfdb
+
+# ---- secrets: NEVER commit ----
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+id_rsa
+id_rsa.*
+secrets.*
+*_api_key*
+*credentials*
+
+# ---- agent / MCP / tooling config (never public) ----
+.claude/
+.mcp.json
+**/.mcp.json
+
+# ---- model weights: never ship (users pull MedGemma themselves) ----
+*.safetensors
+*.gguf
+*.bin
+*.pt
+models/
+
+# ---- derived results: ship only curated public/aggregate outputs ----
+# Ignore directory CONTENTS (results/*, not results/) so the README negation
+# can fire. Never commit row-level PHI or private subtrees.
+results/*
+!results/README.md
+results/private/
+results/**/*_raw*.csv
+
+# ---- archived null artifacts: keep on disk, never push ----
+**/_archive_v1_null/
+
+# ---- run-time logs (may contain absolute home paths in error traces) ----
+logs/
+*.log
+
+# ---- python / tooling ----
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.coverage
+dist/
+build/
+*.egg-info/
+
+# ---- LaTeX build artifacts (the manuscript .tex is tracked; outputs are not) ----
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.synctex.gz
+*.toc
+manuscript/tex/*.log
+manuscript/tex/*.pdf
+
+# ---- internal planning / process files: NEVER commit to the public repo ----
+# These are working notes and evidence workbooks, not release artifacts.
+# (.gitattributes export-ignore only affects archives, not `git add`; ignore here too.)
+task_plan.md
+findings.md
+progress.md
+HANDOFF.md
+findings/
+manuscript/workbooks/
+
+# ---- Internal docs and agent config -- held from public release ----
+# The entire docs/ tree (00 charter through 04 release inventory) is an internal
+# process record, not a release artifact. CLAUDE.md is agent-orchestration config.
+# manuscript/refs/ contains only an internal citation QA log.
+docs/
+CLAUDE.md
+manuscript/refs/
+# Figure build docs are internal working notes (carry subject pseudonyms + stale
+# jargon); the figures themselves ship, these build records do not.
+manuscript/figures/buildlog.md
+manuscript/figures/captions.md
+# Internal HTML deliverables (work summary, repo preview) for the author, not the release.
+reports/
+
+# ---- release tooling (private; hardcodes absolute paths) ----
+release_tooling/
+
+# ---- manuscript layout variants (working artifacts; only the chosen manuscript.tex ships) ----
+manuscript/layouts/
+
+# ---- OS / IDE / editor cruft ----
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

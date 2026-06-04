@@ -1,0 +1,2 @@
+# sha256: 570274c0120a8749d3c6fbf5e503e4322e8236c85fc95128ffaead7adb70d266
+Classify the attached 5-minute perfusion-index segment and its Welch power spectrum against the criteria. Return only the JSON object.
