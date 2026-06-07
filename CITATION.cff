@@ -36,4 +36,5 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0007-0889-4669"
   year: 2026
   journal: "medRxiv"
-  # doi: added once the medRxiv preprint posts (format 10.1101/2026.MM.DD.XXXXXXXX)
+  doi: "10.64898/2026.06.03.26354863"
+  url: "https://doi.org/10.64898/2026.06.03.26354863"

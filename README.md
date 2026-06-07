@@ -57,7 +57,7 @@ See `data/README.md` for the MIMIC-IV access pointer.
 
 ## Manuscript
 
-The manuscript source is at `manuscript/tex/manuscript.tex` and compiles to `manuscript.pdf` with `latexmk -pdf manuscript.tex`; the figures are in `manuscript/figures/`. A preprint is posted on medRxiv (DOI added here once it goes live).
+The manuscript source is at `manuscript/tex/manuscript.tex` and compiles to `manuscript.pdf` with `latexmk -pdf manuscript.tex`; the figures are in `manuscript/figures/`. A preprint is posted on medRxiv: [doi:10.64898/2026.06.03.26354863](https://doi.org/10.64898/2026.06.03.26354863).
 
 ## Data availability
 
@@ -76,7 +76,7 @@ If you use this work, please cite the preprint and the archived software. A mach
 
 **Preprint**
 
-> Landry TC, Kim Y. An AI-assisted feasibility evaluation of three photoplethysmography-derived microvascular reactivity signals in MIMIC-IV-WDB v0.1.0. medRxiv. 2026. doi: [added when posted].
+> Landry TC, Kim Y. An AI-assisted feasibility evaluation of three photoplethysmography-derived microvascular reactivity signals in MIMIC-IV-WDB v0.1.0. medRxiv. 2026. doi:10.64898/2026.06.03.26354863.
 
 **Software (this repository, v1.0.0)**
 
