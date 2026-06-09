@@ -4,6 +4,7 @@ A feasibility evaluation of three photoplethysmography-derived microvascular rea
 
 **Authors:** Thomas C. Landry, MD; Youjin Kim, MD
 
+[![medRxiv](https://img.shields.io/badge/medRxiv-10.64898%2F2026.06.03.26354863-b31b1b)](https://doi.org/10.64898/2026.06.03.26354863)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20534451.svg)](https://doi.org/10.5281/zenodo.20534451)
 
 The three signals attempted:
